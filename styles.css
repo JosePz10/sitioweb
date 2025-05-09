@@ -1,0 +1,173 @@
+/* Fondo y tipografía */
+body {
+    background: linear-gradient(45deg, #ff6a00, #ee0979, #42a5f5);
+    background-size: 400% 400%;
+    font-family: 'Roboto', sans-serif;
+    animation: backgroundAnimation 6s infinite linear, fadeIn 1s ease-in-out;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fondo dinámico desde la esquina superior derecha a inferior izquierda */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: top right;
+    }
+    50% {
+        background-position: bottom left;
+    }
+    100% {
+        background-position: top right;
+    }
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Contenedor principal */
+.container {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    width: 100%;
+    max-width: 900px;
+    animation: slideUp 0.8s ease-out;
+}
+
+/* Animación de deslizamiento */
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Títulos */
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Formularios */
+.form-label {
+    font-weight: 500;
+    color: #555;
+}
+
+.form-control {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #00c6ff;
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.7);
+}
+
+/* Botones */
+button {
+    background: linear-gradient(120deg, #12c2e9, #c471ed, #f7797d);
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Botones personalizados */
+button.register {
+    background: linear-gradient(120deg, #28a745, #218838);
+}
+
+button.edit {
+    background: linear-gradient(120deg, #ffc107, #ff9800);
+}
+
+button.delete {
+    background: linear-gradient(120deg, #dc3545, #c82333);
+}
+
+/* Tabla */
+.table {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.table thead th {
+    background: linear-gradient(120deg, #12c2e9, #c471ed);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.table tbody td {
+    text-align: center;
+    padding: 15px;
+    color: #555;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(103, 128, 159, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+/* Pie de tabla */
+.table tfoot td {
+    font-weight: bold;
+    color: #444;
+    background-color: #f1f1f1;
+}
+
+/* Alineación de los botones */
+.d-flex {
+    display: flex;
+    justify-content: space-between; /* Espaciado entre los elementos */
+    align-items: center; /* Centrado vertical */
+}
+
+/* Estilo de los botones dentro de los divs */
+.d-flex button {
+    margin-left: 10px;
+    margin-right: 10px;
+}

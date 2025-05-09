@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Reservas y Actividades</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Gestión de Reservas y Actividades</h1>
+
+    <!-- Formulario de Registro de Estudiantes -->
+    <form id="formEstudiantes" class="mb-5">
+      <h2 class="mb-3">Registrar Estudiante</h2>
+      <div class="mb-3">
+        <label for="nombreEstudiante" class="form-label">Nombre Completo</label>
+        <input type="text" class="form-control" id="nombreEstudiante" placeholder="Ingresa tu nombre completo" required>
+      </div>
+      <div class="mb-3">
+        <label for="codigoMatricula" class="form-label">Código de Matrícula</label>
+        <input type="text" class="form-control" id="codigoMatricula" placeholder="8 caracteres alfanuméricos" maxlength="8" required>
+        <div class="text-danger mt-1" id="errorMatricula"></div>
+      </div>
+      <button type="submit" class="btn btn-primary">Registrar Estudiante</button>
+      <button id="btnImprimirEstudiantes" class="btn btn-info">Imprimir Estudiantes</button>
+    </form>
+
+    <!-- Tabla de Estudiantes -->
+    <h2>Estudiantes Registrados</h2>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Matrícula</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaEstudiantes"></tbody>
+    </table>
+
+    <!-- Formulario de Registro de Reservas -->
+    <form id="formReservas" class="mt-5">
+      <h2 class="mb-3">Registrar Reserva de Actividad</h2>
+      <div class="mb-3">
+        <label for="selectEstudiante" class="form-label">Selecciona Estudiante</label>
+        <select class="form-select" id="selectEstudiante" required>
+          <option value="">Selecciona un estudiante</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="actividad" class="form-label">Actividad</label>
+        <select class="form-select" id="actividad" required>
+          <option value="">Selecciona una actividad</option>
+          <option value="Teatro">Teatro</option>
+          <option value="Taller de Dibujo">Taller de Dibujo</option>
+          <option value="Club de Lectura">Club de Lectura</option>
+          <option value="Excursión Cultural">Excursión Cultural</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="fecha" class="form-label">Fecha</label>
+        <input type="date" class="form-control" id="fecha" required>
+      </div>
+      <button type="submit" class="btn btn-success">Registrar Reserva</button>
+      <button id="btnImprimirReservas" class="btn btn-info">Imprimir Reservas</button>
+    </form>
+
+    <!-- Tabla de Reservas -->
+    <h2 class="mt-5">Reservas de Actividades</h2>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Estudiante</th>
+          <th>Actividad</th>
+          <th>Fecha</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaReservas"></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
